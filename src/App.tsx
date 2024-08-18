@@ -28,6 +28,8 @@ function App() {
   const onSubmit = async (values) => {
     setLoading(true);
 
+    console.log('ONSUBMIT',values);
+
 
     // random id for  image
     const { data: image } = await supabase.storage
@@ -123,6 +125,7 @@ function App() {
                     type="file"
                     accept="image/*"
                     capture="environment"
+                    
                     {...form.register("profile", { required: true })}
                   />
                 </div>
